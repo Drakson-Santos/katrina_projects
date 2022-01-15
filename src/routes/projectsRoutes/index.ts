@@ -14,8 +14,4 @@ router.get("", async (req: Request, res: Response) => {
     return _getProjectsController.execute(req, res);
 });
 
-// router.put("", async (req: Request, res: Response) => {
-//     return _updateUsersUseCaseController.execute(req, res);
-// });
-
 module.exports = (app: any) => app.use(BASE_PATH, router);
