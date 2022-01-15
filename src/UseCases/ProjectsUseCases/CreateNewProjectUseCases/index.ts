@@ -1,6 +1,6 @@
 import { MongoProjectsRepositoriy } from "../../../repositories/implemantatios/MongoDB/MongoProjectsRepository";
-import { CreateNewProjectsUseCase } from "./RegisterNewUseCase";
-import { CreateNewProjectsController } from "./RegisterNewUserController";
+import { CreateNewProjectsUseCase } from "./CreateNewProjectUseCase";
+import { CreateNewProjectsController } from "./CreateNewProjectController";
 
 
 const _projectsRepository = new MongoProjectsRepositoriy();

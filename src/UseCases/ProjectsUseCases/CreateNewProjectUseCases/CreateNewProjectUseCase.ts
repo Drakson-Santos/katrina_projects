@@ -1,6 +1,6 @@
 
 import { IProjectsRepository } from "../../../repositories/IProjectsRepository";
-import { IDataRegisterProject } from "./RegisterNewUserDTO";
+import { IDataRegisterProject } from "./CreateNewProjectDTO";
 
 export class CreateNewProjectsUseCase {
 

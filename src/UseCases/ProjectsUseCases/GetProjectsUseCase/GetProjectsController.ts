@@ -1,19 +1,19 @@
 import { Request, Response } from "express";
-import { CreateNewProjectsUseCase } from "./RegisterNewUseCase";
+import { GetProjectsUseCase } from "./GetProjectsUseCase";
 
-export class CreateNewProjectsController {
+export class GetProjectsController {
 
     constructor(
-        private createNewProjectsUseCase: CreateNewProjectsUseCase
+        private getProjectsUseCase: GetProjectsUseCase
     ) { }
 
     async execute(request: Request, response: Response): Promise<Response> {
-        const { name } = request.body;
+        const { id } = request.query;
         try {
-            const user = await this.createNewProjectsUseCase.execute({
-                name
+            const users = await this.getProjectsUseCase.execute({
+                id: id ? String(id) : undefined
             });
-            return response.status(201).send(user)
+            return response.status(200).send(users)
         } catch (error) {
             return response.status(error.status || 500).json({
                 message: error.message || 'Unexpected error.',
