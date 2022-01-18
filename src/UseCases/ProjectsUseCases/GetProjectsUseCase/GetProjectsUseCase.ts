@@ -17,7 +17,6 @@ export class GetProjectsUseCase {
         }
 
         if (!result) throw new Error ('No projects found', 404, 'NO_PROJECTS_FOUND');
-
         return result
     }
 }

@@ -10,10 +10,10 @@ export class GetProjectsController {
     async execute(request: Request, response: Response): Promise<Response> {
         const { id } = request.query;
         try {
-            const users = await this.getProjectsUseCase.execute({
+            const projects = await this.getProjectsUseCase.execute({
                 id: id ? String(id) : undefined
             });
-            return response.status(200).send(users)
+            return response.status(200).send(projects)
         } catch (error) {
             return response.status(error.status || 500).json({
                 message: error.message || 'Unexpected error.',
